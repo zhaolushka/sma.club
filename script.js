@@ -29,8 +29,12 @@ if (teamTrack) {
     cards.forEach((el) => el.classList.toggle('is-on', el === card));
   };
 
+  const canHover = window.matchMedia('(hover: hover) and (pointer: fine)');
   cards.forEach((card) => {
     card.addEventListener('click', () => openCard(card));
+    card.addEventListener('mouseenter', () => {
+      if (canHover.matches) openCard(card);
+    });
   });
 
   teamNext?.addEventListener('click', () => {
