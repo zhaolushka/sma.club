@@ -1,6 +1,6 @@
 const JOIN = {
   whatsapp: 'https://chat.whatsapp.com/GJlyic3xpArDcgKuA1RMoP',
-  sheet: '',
+  sheet: 'https://script.google.com/macros/s/AKfycbwkTwVBEt9hz6itOOIo3vhbefQ5145mxdWFZ9O2t5P4SxWCI0d7pupwDDXGDXBv1KP4EQ/exec',
 };
 
 const burger = document.getElementById('burger');
@@ -79,7 +79,7 @@ joinForm?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(joinForm));
   const payload = {
-    date: new Date().toISOString(),
+    date: new Date().toLocaleString('ru-KZ', { timeZone: 'Asia/Almaty' }),
     name: String(data.name || '').trim(),
     phone: kzPhone(data.phone),
     group: String(data.group || '').trim(),
@@ -99,8 +99,7 @@ joinForm?.addEventListener('submit', async (e) => {
       await fetch(JOIN.sheet, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify(payload),
+        body: new URLSearchParams(payload),
       });
     } catch (_) { /* still open WhatsApp */ }
   }
