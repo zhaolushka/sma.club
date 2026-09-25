@@ -74,8 +74,25 @@ phoneInput?.addEventListener('input', () => {
   phoneInput.value = digits.slice(0, 11);
 });
 
+function saveJoin(payload) {
+  if (!JOIN.sheet) return;
+  const body = new URLSearchParams(payload);
+  try {
+    navigator.sendBeacon?.(
+      JOIN.sheet,
+      new Blob([body.toString()], { type: 'application/x-www-form-urlencoded' }),
+    );
+  } catch (_) { /* fallback below */ }
+  fetch(JOIN.sheet, {
+    method: 'POST',
+    mode: 'no-cors',
+    keepalive: true,
+    body,
+  }).catch(() => {});
+}
+
 const joinForm = document.getElementById('join-form');
-joinForm?.addEventListener('submit', async (e) => {
+joinForm?.addEventListener('submit', (e) => {
   e.preventDefault();
   const data = Object.fromEntries(new FormData(joinForm));
   const payload = {
@@ -89,20 +106,8 @@ joinForm?.addEventListener('submit', async (e) => {
   if (!payload.name || !payload.phone || !payload.group || !payload.course) return;
 
   const sendBtn = document.getElementById('join-send');
-  if (sendBtn) {
-    sendBtn.disabled = true;
-    sendBtn.textContent = 'Sending…';
-  }
+  if (sendBtn) sendBtn.disabled = true;
 
-  if (JOIN.sheet) {
-    try {
-      await fetch(JOIN.sheet, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: new URLSearchParams(payload),
-      });
-    } catch (_) { /* still open WhatsApp */ }
-  }
-
+  saveJoin(payload);
   window.location.href = JOIN.whatsapp;
 });
