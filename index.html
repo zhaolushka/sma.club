@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Math Club</title>
+<meta name="description" content="Math Club: weekly sessions, olympiad prep, and projects we build together.">
+<meta property="og:title" content="Math Club">
+<meta property="og:description" content="Weekly meetups, olympiad prep, and shared projects.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=kz7702">
+</head>
+<body>
+<div class="sky" aria-hidden="true">
+  <i class="s1">π</i>
+  <i class="s2">∑</i>
+  <i class="s3">∞</i>
+  <i class="s4">√</i>
+  <i class="s5">Δ</i>
+  <i class="s6">x²</i>
+  <i class="s7">θ</i>
+  <span class="orb o1"></span>
+  <span class="orb o2"></span>
+  <span class="orb o3"></span>
+</div>
+
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M3 3v18h18z"/><path d="M7 21v-3"/><path d="M12 21v-3"/><path d="M17 21v-3"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.1 14c.2-1 .6-1.7 1.4-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.8.8 1.2 1.5 1.4 2.5"/></symbol>
+  <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/><circle cx="9" cy="6" r="2.2"/><circle cx="15" cy="12" r="2.2"/><circle cx="9" cy="18" r="2.2"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></symbol>
+  <symbol id="i-thumb" viewBox="0 0 24 24"><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/><path d="M7 11.5 12 2a3 3 0 0 1 3 3.9L14 10h5.8a2 2 0 0 1 2 2.5l-2.3 8a2 2 0 0 1-2 1.5H7z"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7.5 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3.5z"/><circle cx="12" cy="13" r="3.2"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><path d="m22 8-6 4 6 4z"/><rect x="2" y="6" width="14" height="12" rx="2"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7L11.8 5.2"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M4 21h16"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/></symbol>
+</svg>
+
+<div class="wrap">
+  <header>
+    <div class="brand"><span class="brand-mark">∑</span>Math Club</div>
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#team">Team</a>
+      <a href="#library">Materials</a>
+      <a href="#gallery">Photos</a>
+      <a href="#join">Join</a>
+    </nav>
+    <a class="btn dark head-join" href="#join">Join</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><svg class="ico"><use href="#i-menu"/></svg></button>
+  </header>
+
+  <div class="hero">
+    <p class="hero-kicker">weekly meetups</p>
+    <h1>Math Club</h1>
+    <p class="hero-lead">Sessions, olympiads, and our own projects — we think together</p>
+    <div class="cast">
+      <img src="assets/img/hero-cast.png?v=gen" alt="" width="1280" height="455">
+    </div>
+  </div>
+
+  <section class="news" id="news">
+    <div class="news-head">
+      <div class="tag">News</div>
+      <h2>Upcoming lessons</h2>
+    </div>
+    <div class="news-grid">
+      <div class="news-empty">
+        <div class="news-ico"><svg class="ico"><use href="#i-cal"/></svg></div>
+        <b>No lessons yet</b>
+        <p>Nothing on the calendar — the club is just getting together. Dates land right after the fair.</p>
+      </div>
+      <article class="news-fair">
+        <span class="news-pill">soon</span>
+        <h3>Club fair</h3>
+        <p>Come say hi: we’ll show what we do, solve a couple of problems, and sign people up for the first sessions.</p>
+        <span class="news-when">teaser · date goes here</span>
+      </article>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-head">
+      <div class="tag">About</div>
+      <h2>Short and clear</h2>
+    </div>
+    <div class="about-cards">
+      <article class="about-card ac1">
+        <div class="grid-tex"></div>
+        <b>Lessons & quizzes</b>
+        <p>Theory, problems, a quiz. You see the gap right away.</p>
+      </article>
+      <article class="about-card ac2">
+        <div class="grid-tex"></div>
+        <b>Rewards for the active</b>
+        <p>No grades. If you show up and pull the room — you get perks.</p>
+      </article>
+      <article class="about-card ac3">
+        <div class="grid-tex"></div>
+        <b>Exam season</b>
+        <p>We prep for exams and level up math as extra practice.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="team-board">
+      <div class="team-intro">
+        <h2>Our<br>team.</h2>
+        <p>Who runs the sessions and quizzes</p>
+        <a class="btn dark" href="#join">Join</a>
+      </div>
+      <div class="team-stage">
+        <div class="team-swipe" id="team-track">
+          <article class="team-card is-on">
+            <img src="assets/img/team-1.png" alt="">
+            <div class="team-cap"><b>Name Surname</b><span>lead</span></div>
+          </article>
+          <article class="team-card">
+            <img src="assets/img/team-2.png" alt="">
+            <div class="team-cap"><b>Name Surname</b><span>combinatorics</span></div>
+          </article>
+          <article class="team-card">
+            <img src="assets/img/team-3.png" alt="">
+            <div class="team-cap"><b>Name Surname</b><span>geometry</span></div>
+          </article>
+          <article class="team-card">
+            <img src="assets/img/team-4.png" alt="">
+            <div class="team-cap"><b>Name Surname</b><span>curator</span></div>
+          </article>
+        </div>
+        <button class="team-next" id="team-next" type="button" aria-label="Next">
+          <svg class="ico"><use href="#i-arrow-ur"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="library">
+    <div class="lib-panel">
+      <div class="lib-badge">
+        <div class="lb-icon"><svg class="ico"><use href="#i-bulb"/></svg></div>
+        <div class="lb-text"><b>On the club shelf: <span data-book-count>10 books</span></b><span>Paper copies for two weeks, e-books we send to everyone</span></div>
+        <div class="lb-dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+
+      <h2 class="lib-title">Books worth starting with</h2>
+
+      <div class="shelf-head">
+        <span>Library</span>
+        <span class="sh-count"><svg class="ico"><use href="#i-book"/></svg><span data-book-count>10 books</span></span>
+      </div>
+
+      <div class="shelf-wrap">
+        <div class="shelf" id="shelf">
+          <div class="shelf-item" data-cat="geo">
+            <div class="cover cv-c"><span class="cv-t">Problems in Plane Geometry</span><span class="cv-by">V. Prasolov</span></div>
+            <div class="s-meta">Advanced</div>
+          </div>
+          <div class="shelf-item" data-cat="geo">
+            <div class="cover cv-a"><span class="cv-t">Visual Geometry</span><span class="cv-by">I. Sharygin</span></div>
+            <div class="s-meta">Beginners</div>
+          </div>
+          <div class="shelf-item" data-cat="geo">
+            <div class="cover cv-e"><span class="cv-t">Problems in Solid Geometry</span><span class="cv-by">I. Sharygin</span></div>
+            <div class="s-meta">Intermediate</div>
+          </div>
+          <div class="shelf-item" data-cat="comb">
+            <div class="cover cv-b"><span class="cv-t">Combinatorics</span><span class="cv-by">N. Vilenkin</span></div>
+            <div class="s-meta">Intermediate</div>
+          </div>
+          <div class="shelf-item" data-cat="comb">
+            <div class="cover cv-f"><span class="cv-t">Concrete Mathematics</span><span class="cv-by">Graham, Knuth, Patashnik</span></div>
+            <div class="s-meta">Advanced</div>
+          </div>
+          <div class="shelf-item" data-cat="num">
+            <div class="cover cv-d"><span class="cv-t">Number Theory</span><span class="cv-by">A. Bukhshtab</span></div>
+            <div class="s-meta">Advanced</div>
+          </div>
+          <div class="shelf-item" data-cat="num">
+            <div class="cover cv-c"><span class="cv-t">The Enjoyment of Math</span><span class="cv-by">Rademacher, Toeplitz</span></div>
+            <div class="s-meta">Intermediate</div>
+          </div>
+          <div class="shelf-item" data-cat="obz">
+            <div class="cover cv-a"><span class="cv-t">What Is Mathematics?</span><span class="cv-by">Courant, Robbins</span></div>
+            <div class="s-meta">Beginners</div>
+          </div>
+          <div class="shelf-item" data-cat="obz">
+            <div class="cover cv-b"><span class="cv-t">Mathematical Puzzles</span><span class="cv-by">M. Gardner</span></div>
+            <div class="s-meta">Everyone</div>
+          </div>
+          <div class="shelf-item" data-cat="obz">
+            <div class="cover cv-e"><span class="cv-t">Club worksheets</span><span class="cv-by">Club materials</span></div>
+            <div class="s-meta">All levels</div>
+          </div>
+        </div>
+        <div class="shelf-glass"></div>
+      </div>
+
+      <div class="cats" id="cats">
+        <button class="cat active" type="button" data-cat="all">All<sup></sup></button>
+        <button class="cat" type="button" data-cat="geo">Geometry<sup></sup></button>
+        <button class="cat" type="button" data-cat="comb">Combinatorics<sup></sup></button>
+        <button class="cat" type="button" data-cat="num">Numbers<sup></sup></button>
+        <button class="cat" type="button" data-cat="obz">Overview<sup></sup></button>
+      </div>
+    </div>
+
+    <div class="lib-sheet">
+      <div class="ls-left">
+        <div class="ls-chips"><span class="pill-tag active">Picks</span><span class="pill-tag">Books</span></div>
+        <div class="ls-title">Autumn pick</div>
+        <div class="ls-sub">What members grab most</div>
+        <div class="ls-num"><b>250</b><span>problems in the archive<br>with write-ups</span></div>
+      </div>
+      <div class="ls-grid">
+        <div class="cover sm cv-b"><span class="cv-t">Combinatorics</span></div>
+        <div class="cover sm cv-c"><span class="cv-t">Plane geometry</span></div>
+        <div class="cover sm cv-a"><span class="cv-t">What Is Mathematics?</span></div>
+        <div class="cover sm cv-f"><span class="cv-t">Puzzles</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-head">
+      <div class="tag">Gallery</div>
+      <h2>Our gallery</h2>
+      <p class="gallery-lead">Classes, hangouts, and just us</p>
+    </div>
+    <div class="gallery">
+      <figure class="g-item g-lg"><img src="assets/img/gallery/g-stand.png" alt=""><figcaption>SMA Math Club stand</figcaption></figure>
+      <figure class="g-item g-tall g-winter"><img src="assets/img/gallery/g-winter.png" alt=""><figcaption>Winter hangout</figcaption></figure>
+      <figure class="g-item g-md"><img src="assets/img/gallery/g-fair.png" alt=""><figcaption>Club fair</figcaption></figure>
+      <figure class="g-item g-md"><img src="assets/img/gallery/g-lesson.png" alt=""><figcaption>Class</figcaption></figure>
+      <figure class="g-item g-lg"><img src="assets/img/gallery/g-awards.png" alt=""><figcaption>Awards</figcaption></figure>
+      <figure class="g-item g-md"><img src="assets/img/gallery/g-first.png" alt=""><figcaption>First place</figcaption></figure>
+      <figure class="g-item g-md"><img src="assets/img/gallery/g-evening.png" alt=""><figcaption>Club night</figcaption></figure>
+      <figure class="g-item g-wide"><img src="assets/img/gallery/g-apec.png" alt=""><figcaption>APEC PetroTechnic</figcaption></figure>
+      <figure class="g-item g-md"><img src="assets/img/gallery/g-xmas.png" alt=""><figcaption>The team</figcaption></figure>
+      <figure class="g-item g-wide"><img src="assets/img/gallery/g-selfie.png" alt=""><figcaption>After the meetup</figcaption></figure>
+      <figure class="g-item g-sm"><img src="assets/img/gallery/g-coffee.png" alt=""><figcaption>Selfie</figcaption></figure>
+      <figure class="g-item g-sm"><img src="assets/img/gallery/g-four.png" alt=""><figcaption>Us</figcaption></figure>
+      <figure class="g-item g-sm"><img src="assets/img/gallery/g-badges.png" alt=""><figcaption>Volunteers</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="join">
+      <h2>Ready to try?</h2>
+      <p>Fill this in — we’ll save it and open WhatsApp.</p>
+      <form class="join-form" id="join-form">
+        <input type="text" name="name" placeholder="Full name" required autocomplete="name">
+        <div class="phone-field">
+          <span>+</span>
+          <input type="tel" name="phone" id="join-phone" value="7" placeholder="7702 123 45 67" inputmode="numeric" maxlength="16" required autocomplete="tel-national">
+        </div>
+        <div class="join-row">
+          <input type="text" name="group" placeholder="Group name" required>
+          <input type="text" name="course" placeholder="Course / year" required>
+        </div>
+        <div class="role-pick" role="radiogroup" aria-label="Join as">
+          <label class="role-opt">
+            <input type="radio" name="role" value="member" checked>
+            <span>Member</span>
+          </label>
+          <label class="role-opt">
+            <input type="radio" name="role" value="teacher">
+            <span>Teacher</span>
+          </label>
+        </div>
+        <button class="btn dark" type="submit" id="join-send">Send request</button>
+      </form>
+      <p class="join-note">Or write us on WhatsApp after you send.</p>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <div class="section-head"><div class="tag">Contacts</div><h2>Where to find us</h2></div>
+    <div class="contacts">
+      <div class="contact-card"><b>Address</b><span>City, street, building, room</span></div>
+      <div class="contact-card"><b>Email</b><span><a href="mailto:club@example.com">club@example.com</a></span></div>
+      <div class="contact-card"><b>Telegram</b><span><a href="#">@mathclub</a></span></div>
+      <div class="contact-card"><b>Hours</b><span>Tue, Thu, Sat · 17:00–20:00</span></div>
+    </div>
+    <div class="map-slot"><span>map goes here</span></div>
+  </section>
+
+  <footer>
+    <span>Math Club © 2026</span>
+    <span class="f-links"><a href="mailto:club@example.com">club@example.com</a><a href="#">Telegram</a><a href="#join">Join</a></span>
+  </footer>
+</div>
+<script src="script.js?v=kz7702"></script>
+</body>
+</html>
