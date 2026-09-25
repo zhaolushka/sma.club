@@ -176,14 +176,14 @@
       <h2>Ready to try?</h2>
       <p>Fill this in — we’ll save it to the club sheet and open WhatsApp.</p>
       <form class="join-form" id="join-form">
-        <input type="text" name="name" placeholder="Full name" required autocomplete="name">
+        <input type="text" name="name" placeholder="Full name" required autocomplete="name" maxlength="80">
         <div class="phone-field">
           <span>+</span>
           <input type="tel" name="phone" id="join-phone" value="7" placeholder="7702 123 45 67" inputmode="numeric" maxlength="16" required autocomplete="tel-national">
         </div>
         <div class="join-row">
-          <input type="text" name="group" placeholder="Group name" required>
-          <input type="text" name="course" placeholder="Course / year" required>
+          <input type="text" name="group" placeholder="Group name" required maxlength="40">
+          <input type="text" name="course" placeholder="Course / year" required maxlength="40">
         </div>
         <div class="role-pick" role="radiogroup" aria-label="Join as">
           <label class="role-opt">
@@ -217,6 +217,6 @@
     <span class="f-links"><a href="mailto:club@example.com">club@example.com</a><a href="#">Telegram</a><a href="#join">Join</a></span>
   </footer>
 </div>
-<script src="script.js?v=joinfast"></script>
+<script src="script.js?v=safer"></script>
 </body>
 </html>

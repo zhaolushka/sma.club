@@ -23,19 +23,37 @@ function readJoinData(e) {
   return {};
 }
 
+function json_(obj) {
+  return ContentService
+    .createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
 function doPost(e) {
   const data = readJoinData(e);
-  getJoinSheet().appendRow([
+  const name = String(data.name || '').trim().slice(0, 80);
+  const phone = String(data.phone || '').replace(/\D/g, '').slice(0, 15);
+  const group = String(data.group || '').trim().slice(0, 40);
+  const course = String(data.course || '').trim().slice(0, 40);
+  const role = data.role === 'teacher' ? 'teacher' : 'member';
+  if (!name || phone.length < 11 || !group || !course) return json_({ ok: false });
+
+  const sheet = getJoinSheet();
+  const last = sheet.getLastRow();
+  if (last >= 2) {
+    const prevPhone = String(sheet.getRange(last, 3).getValue()).replace(/\D/g, '');
+    if (prevPhone === phone) return json_({ ok: true, dup: true });
+  }
+
+  sheet.appendRow([
     data.date || new Date().toISOString(),
-    data.name || '',
-    data.phone || '',
-    data.group || '',
-    data.course || '',
-    data.role || '',
+    name,
+    phone.length === 11 ? `+${phone}` : data.phone || '',
+    group,
+    course,
+    role,
   ]);
-  return ContentService
-    .createTextOutput(JSON.stringify({ ok: true }))
-    .setMimeType(ContentService.MimeType.JSON);
+  return json_({ ok: true });
 }
 
 function doGet() {

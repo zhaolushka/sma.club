@@ -76,18 +76,11 @@ phoneInput?.addEventListener('input', () => {
 
 function saveJoin(payload) {
   if (!JOIN.sheet) return;
-  const body = new URLSearchParams(payload);
-  try {
-    navigator.sendBeacon?.(
-      JOIN.sheet,
-      new Blob([body.toString()], { type: 'application/x-www-form-urlencoded' }),
-    );
-  } catch (_) { /* fallback below */ }
   fetch(JOIN.sheet, {
     method: 'POST',
     mode: 'no-cors',
     keepalive: true,
-    body,
+    body: new URLSearchParams(payload),
   }).catch(() => {});
 }
 
