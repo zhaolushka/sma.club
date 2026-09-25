@@ -20,25 +20,6 @@ nav.addEventListener('click', (e) => {
   if (e.target.tagName === 'A') setMenu(false);
 });
 
-const teamTrack = document.getElementById('team-track');
-const teamNext = document.getElementById('team-next');
-if (teamTrack) {
-  const cards = [...teamTrack.querySelectorAll('.team-card')];
-
-  const openCard = (card) => {
-    cards.forEach((el) => el.classList.toggle('is-on', el === card));
-  };
-
-  cards.forEach((card) => {
-    card.addEventListener('click', () => openCard(card));
-  });
-
-  teamNext?.addEventListener('click', () => {
-    const i = cards.findIndex((el) => el.classList.contains('is-on'));
-    openCard(cards[(i + 1) % cards.length]);
-  });
-}
-
 const galleryItems = document.querySelectorAll('.g-item');
 if (galleryItems.length) {
   galleryItems.forEach((el, i) => {
