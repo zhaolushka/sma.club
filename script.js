@@ -20,21 +20,6 @@ nav.addEventListener('click', (e) => {
   if (e.target.tagName === 'A') setMenu(false);
 });
 
-const cats = document.getElementById('cats');
-const shelf = document.getElementById('shelf');
-const books = [...shelf.querySelectorAll('.shelf-item')];
-
-shelf.addEventListener('click', (e) => {
-  const item = e.target.closest('.shelf-item');
-  if (!item) return;
-  const alreadySelected = item.classList.contains('selected');
-  books.forEach((b) => b.classList.remove('selected'));
-  if (!alreadySelected) item.classList.add('selected');
-});
-
-const booksLabel = `${books.length} ${books.length === 1 ? 'book' : 'books'}`;
-document.querySelectorAll('[data-book-count]').forEach((el) => { el.textContent = booksLabel; });
-
 const teamTrack = document.getElementById('team-track');
 const teamNext = document.getElementById('team-next');
 if (teamTrack) {
@@ -121,20 +106,4 @@ joinForm?.addEventListener('submit', async (e) => {
   }
 
   window.location.href = JOIN.whatsapp;
-});
-
-cats.querySelectorAll('.cat').forEach((tab) => {
-  const cat = tab.dataset.cat;
-  const matching = cat === 'all' ? books : books.filter((b) => b.dataset.cat === cat);
-  tab.querySelector('sup').textContent = matching.length;
-
-  tab.addEventListener('click', () => {
-    cats.querySelector('.cat.active').classList.remove('active');
-    tab.classList.add('active');
-    books.forEach((b) => {
-      b.hidden = !matching.includes(b);
-      b.classList.remove('selected');
-    });
-    shelf.scrollTo({ left: 0, behavior: 'smooth' });
-  });
 });
